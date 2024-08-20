@@ -1,3 +1,12 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "home_card";
+@import "banner";
+
+body {
+   background-color: $linen;
+
+   p {
+    font-family: $body-font;
+   }
+}

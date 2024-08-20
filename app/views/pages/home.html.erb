@@ -1,24 +1,22 @@
+<div class="banner">
+    <h2>A place to place to party</h2>
+    <h2>that is not your home!</h2>
+    <img src="">
+</div>
+
 <div class="container">
-
     <div class="card-container my-3">
-
         <% @venues.each do |venue| %>
-
             <div class="flex-card mb-3">
                 <div> <img src=<%= venue.image_url %> ></div>
                 <div class="p-3">
-                    <h4> <%= venue.name %> </h4>
-                    <p class="mb-0"> <%= venue.description %> </p>
-                    <p> <%= venue.address %> </p>
-                    <p> <strong> €<%= venue.price %> </strong> </p>
+                    <h2> <%= venue.name %> </h2>
+                    <p class="mb-0"> <em><%= venue.city %>, <%= venue.country %> </em></p>
+                    <p> <strong> € <%= venue.price %> </strong> </p>
                 </div>
-
             </div>
-
         <% end %>
-
     </div>
-
 </div>
 
 
