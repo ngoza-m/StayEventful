@@ -2,6 +2,8 @@
 <%= simple_form_for @venue do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :country, as: :string %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.button :submit %>
