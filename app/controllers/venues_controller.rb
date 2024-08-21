@@ -1,9 +1,7 @@
 class VenuesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   # GET /venues/new
-
-  skip_before_action :authenticate_user!, only:  :index 
-
   def new
     @venue = Venue.new
   end
