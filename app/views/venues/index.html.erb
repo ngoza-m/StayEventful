@@ -1,5 +1,5 @@
 <div class="container">
-    
+
     <div class="card-container my-3">
         <% @venues.each do |venue| %>
             <div class="flex-card mb-3">
@@ -8,6 +8,7 @@
                     <h2> <%= venue.name %> </h2>
                     <p class="mb-0"> <em><%= venue.city %>, <%= venue.country %> </em></p>
                     <p> <strong> € <%= venue.price %> </strong> </p>
+                    <p><%= link_to "view", venue_path(venue) %> </p>
                 </div>
             </div>
         <% end %>
