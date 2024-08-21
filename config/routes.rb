@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Define routes for venues
   resources :venues
 
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
