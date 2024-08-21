@@ -1,5 +1,9 @@
 class VenuesController < ApplicationController
+
   # GET /venues/new
+
+  skip_before_action :authenticate_user!, only:  :index 
+
   def new
     @venue = Venue.new
   end
@@ -16,6 +20,10 @@ class VenuesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @venues = Venue.all
   end
 
   private

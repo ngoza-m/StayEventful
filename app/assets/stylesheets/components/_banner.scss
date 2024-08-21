@@ -1,0 +1,37 @@
+.banner {
+    height: 800px;
+    background-image: asset-url("bg-2.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2 {
+        font-family: $body-font;
+        font-weight: 800;
+        font-size: 50px;
+        color: white;
+}
+
+.banner a {
+    text-decoration: none;
+    color: white;
+}
+
+.banner p {
+    background-color: $pink;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.after-banner {
+    background-color: $bg;
+    padding: 60px;
+    margin-bottom: 50px;
+}
+
+.after-banner h2 {
+    font-size: 35px;
+}
