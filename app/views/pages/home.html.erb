@@ -1,14 +1,21 @@
 <div class="banner">
-    <h2>A place to place to party</h2>
-    <h2>that is not your home!</h2>
-    <img src="">
+    <h2 class="mb-4">A place to party like is not your home!</h2>
+    <p> <%= link_to "Find a venue", venues_path %> </p>
 </div>
 
+<div class="after-banner">
+    <h2>Party Venues for Hire</h2>
+    <p>Dreaming of hosting a private party in a home that is not your own? 
+        StayEventful has the best private party venues for hire. Find your perfect party venue today.</p>
+
+</div>
 <div class="container">
+    
     <div class="card-container my-3">
         <% @venues.each do |venue| %>
             <div class="flex-card mb-3">
-                <div> <img src=<%= venue.image_url %> ></div>
+                <!-- <div> <img src=<%= venue.image_url %> ></div> -->
+                <div> <img src="https://images.pexels.com/photos/6510428/pexels-photo-6510428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" ></div>
                 <div class="p-3">
                     <h2> <%= venue.name %> </h2>
                     <p class="mb-0"> <em><%= venue.city %>, <%= venue.country %> </em></p>
