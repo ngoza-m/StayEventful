@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   # GET /venues/new
   def new
@@ -28,9 +28,10 @@ class VenuesController < ApplicationController
 
 
   def destroy
-  @venue = Venue.find(params[:id])
-  @venue.destroy
-  redirect_to root_path, status: :see_other
+    @venue = Venue.find(params[:id])
+    @venue.destroy
+    redirect_to root_path, status: :see_other
+  end
 
   def index
     @venues = Venue.all
