@@ -3,8 +3,6 @@
   <%= simple_form_for @venue do |f| %>
     <%= f.input :name, input_html: {class: "rounded-input"} %>
     <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :country, as: :string %>
     <%= f.input :description, as: :text %>
     <%= f.input :price %>
     <%= f.button :submit %>
