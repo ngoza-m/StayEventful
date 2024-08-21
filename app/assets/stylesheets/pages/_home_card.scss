@@ -7,8 +7,8 @@
 .flex-card {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    // border: 1px, solid, #c8c8c841;
+    // border-radius: 10px;
+    border: 1px, solid, #c8c8c841;
     box-shadow: 2px 2px #88888810;
     color: $raisin-black;
     background-color: white;
@@ -16,8 +16,8 @@
     img {
         object-fit: cover;
         width:100%; 
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        // border-top-left-radius: 10px;
+        // border-top-right-radius: 10px;
     }
 
     h2{
