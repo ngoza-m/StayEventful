@@ -1,10 +1,23 @@
-<h2><%= @venue.name %></h2>
-<p><%= @venue.address %></p>
+<div class="container">
+  <div class="mt-4 justify-content-center"><img src=<%= @venue.image_url %> ></div>
 
-<li class="list-group-item">
-  <%= @venue.name %>
-  <%= link_to "Delete",
-    venue_path(@venue),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-</li>
+
+
+  <h2><%= @venue.name %></h2>
+  <p><%= @venue.address %></p>
+
+
+  <% if user_signed_in? %>
+
+  <li class="list-group-item">
+    <%= @venue.name %>
+    <%= link_to "Delete",
+      venue_path(@venue),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </li>
+
+  <% end %>
+
+
+</div>
