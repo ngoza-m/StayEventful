@@ -6,13 +6,11 @@ class VenuesController < ApplicationController
     @venue = Venue.new
   end
 
-
   def show
     @venue = Venue.find(params[:id])
   end
 
   # POST /venues
-
   def create
     @venue = Venue.new(venue_params)
     @venue.user = current_user
@@ -26,7 +24,6 @@ class VenuesController < ApplicationController
     end
   end
 
-
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
@@ -35,7 +32,6 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
-
   end
 
   private
