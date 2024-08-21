@@ -8,6 +8,14 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+
+    # @marker = @venue.geocoded.map do |venue|
+    #   {
+    #     lat: venue.latitude,
+    #     lng: venue.longitude
+    #   }
+    # end
+
   end
 
   # POST /venues
