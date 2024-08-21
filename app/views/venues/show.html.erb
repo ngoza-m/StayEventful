@@ -1,0 +1,10 @@
+<h2><%= @venue.name %></h2>
+<p><%= @venue.address %></p>
+
+<li class="list-group-item">
+  <%= @venue.name %>
+  <%= link_to "Delete",
+    venue_path(@venue),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</li>
