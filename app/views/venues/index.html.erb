@@ -3,7 +3,14 @@
     <div class="card-container my-3">
         <% @venues.each do |venue| %>
             <div class="flex-card mb-3">
-                <div> <a href=<%= venue_path(venue) %>> <img src=<%= venue.image_url %> > </a></div>
+                <div> <a href=<%= venue_path(venue) %>>
+                    <% if venue.photo.attached? %>
+                      <%= cl_image_tag venue.photo.key %>
+                    <% else %>
+                      <img src="<%= venue.image_url %>">
+                    <% end %>
+                  </a>
+                  </div>
                 <div class="p-3">
                     <a href=<%= venue_path(venue) %>> <h2> <%= venue.name %> </h2></a>
                     <p class="mb-0"> <%= venue.address %> </p>

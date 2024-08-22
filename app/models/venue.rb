@@ -1,5 +1,7 @@
 class Venue < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
+
   has_many :bookings
 
 
@@ -8,6 +10,7 @@ class Venue < ApplicationRecord
 
   #geocoded_by :address
   #after_validation :geocode, if: :will_save_change_to_address?
+
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
