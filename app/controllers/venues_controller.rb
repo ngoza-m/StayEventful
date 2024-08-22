@@ -15,6 +15,10 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
     @marker = [{ lat: @venue.latitude, lng: @venue.longitude }]
+    
+    @booking = Booking.new
+
+ 
   end
 
   # POST /venues
