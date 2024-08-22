@@ -1,4 +1,81 @@
+// Styling for the error message
+.error-message {
+  font-size: 18px;    // Increase font size for the error message
+  color: #ff0000;     // Make the error message red for visibility
+  margin-bottom: 20px; // Add space below the error message
+}
+
+// Styling for input fields
 .rounded-input {
+
   border-radius: 100px;
   text-decoration: dotted;
+
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.address_input {
+  background-color: #F4F4F4;
+}
+
+// Styling for the text area
+.rounded-textarea {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+// Styling for the image file input
+.form-control-file {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+// Style for the submit button
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.form-container {
+  max-width: 600px;  // Limit the width of the form
+  padding: 20px;     // Add padding inside the form container
+  margin: 40px auto; // Center the container and add top/bottom margin
+  background-color: #f8f9fa; // Light background color
+  border: 1px solid #ccc;     // Border around the form container
+  border-radius: 8px;         // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+
+}
+
+// Styling for h1
+.form-heading {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: $raisin-black;
+  font-family: $headers-font;
+  font-weight: bold;
 }

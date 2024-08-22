@@ -1,23 +1,72 @@
 <div class="container">
-  <div class="show-page">
-    <div class="mt-4 justify-content-center"><img src=<%= @venue.image_url %> ></div>
+
+  <div class="show my-4">
+
+    <div> <%= cl_image_tag @venue.photo.key %> </div>
 
 
 
-    <h2><%= @venue.name %></h2>
-    <p><%= @venue.description %></p>
+    <div> <img src=<%= @venue.image_url %> > </div>
 
 
-    <% if user_signed_in? %>
+    <div class="venue-bookings-container row mb-4">
 
-    <p>
-      <%= link_to "Delete",
-        venue_path(@venue),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </p>
+      <div class="col-6">
+        <h2 class="mt-4"> <%= @venue.name %> </h2>
+        <div class="location-with-icon">
+          <i class="fa-solid fa-location-dot fa-lg" style="color: #fe019a;"></i>
+          <div class ="txt"><p> <%= @venue.address %> </p> </div>
+        </div>
+        <p> <%= @venue.description %> </p>
+      
+        <% if user_signed_in? %>
+            <% if @venue.user_id == current_user.id %>
+              <div class="yellow-btn my-4">
+                <%= link_to "Edit", edit_venue_path(@venue) %>
+                <%= link_to "Delete",
+                  venue_path(@venue),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+   
 
-    <% end %>
+    <div class="col-6">
+
+      <div class="form-container">
+        <%= simple_form_for [@venue, @booking] do |f| %>
+      
+          <% if @booking.errors.any? %>
+            <div id="error_explanation" class="error-message">
+              <p>Oops! Something went wrong!</p>
+            </div>
+          <% end %>
+      
+          <div class="form-group">
+            <%= f.input :date, input_html: {class: "rounded-input"}, lable: "Pick a Date" %>
+            <%= f.input :hours, input_html: {class: "rounded-input"}, placeholder: "For how many hours?" %>
+          </div>
+  
+          <div class="form-group">
+           
+          </div>
+      
+      
+          <%= f.button :submit, "Create Booking", class: "btn btn-success" %>
+        <% end %>
+      </div>
+
+    </div>
+
+
+  </div mt-4>
+
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
   </div>
 

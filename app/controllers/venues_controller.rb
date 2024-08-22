@@ -1,21 +1,24 @@
 class VenuesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show edit]
+
+  # GET /venues
+  def index
+    @venues = Venue.all
+  end
 
   # GET /venues/new
   def new
     @venue = Venue.new
   end
 
+  # GET /venues/:id
   def show
     @venue = Venue.find(params[:id])
+    @marker = [{ lat: @venue.latitude, lng: @venue.longitude }]
+    
+    @booking = Booking.new
 
-    # @marker = @venue.geocoded.map do |venue|
-    #   {
-    #     lat: venue.latitude,
-    #     lng: venue.longitude
-    #   }
-    # end
-
+ 
   end
 
   # POST /venues
@@ -32,19 +35,20 @@ class VenuesController < ApplicationController
     end
   end
 
+  def edit
+    @venue = Venue.find(params[:id])
+  end
+
+  # DELETE /venues/:id
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
-    redirect_to root_path, status: :see_other
-  end
-
-  def index
-    @venues = Venue.all
+    redirect_to profile_path, status: :see_other
   end
 
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :city, :country, :description, :price)
+    params.require(:venue).permit(:name, :address, :description, :price, :photo)
   end
 end

@@ -2,9 +2,11 @@
 @import "home";
 @import "home_card";
 @import 'sign_up';
+@import "show_page";
+@import "profile";
 
 body {
-   background-color: 	#fdfdff;
+   background-color: white;
 
    p {
     font-family: $body-font;

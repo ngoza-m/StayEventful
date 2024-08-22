@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Define routes for venues
-  resources :venues
+  get "profile", to: "pages#profile"
+  resources :venues do
+    resources :bookings, only: [:new, :create, :edit]
+  end
+
+  resources :bookings, only: [ :edit, :destroy, :update ]
 
 
   # Defines the root path route ("/")
