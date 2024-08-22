@@ -1,7 +1,7 @@
 .footer{
 
   background-color: $raisin-black;
-  padding: 20px 10px;
+  padding: 20px 25px;
   width: 100%;
   justify-content: space-between !important;
   list-style-type: none;
@@ -19,5 +19,28 @@ justify-content: space-between;
 }
 
 ul {
- margin: 0;
+ margin: 50;
+}
+
+.icons ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.icons ul li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 35%;
+  background-color: #292421;
+  border: 1px solid white;
+}
+
+.about{
+  justify-content: center;
+  word-spacing: 10px;
 }
