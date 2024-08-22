@@ -1,0 +1,13 @@
+.yellow-btn a {
+    padding: 8px;
+    font-size: medium;
+    background-color: #dead14;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.yellow-btn a:hover {
+    background-color: $pink;
+}
