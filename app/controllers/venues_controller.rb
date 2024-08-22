@@ -14,8 +14,9 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
 
-    # @marker = @venue.geocoded.map do |venue|
-    #   {
+    @marker = [{ lat: @venue.latitude, lng: @venue.longitude }]
+
+    # @markers = @venue.geocoded.map do |venue| {
     #     lat: venue.latitude,
     #     lng: venue.longitude
     #   }
@@ -40,7 +41,7 @@ class VenuesController < ApplicationController
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   private

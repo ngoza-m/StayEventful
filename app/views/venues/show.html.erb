@@ -1,23 +1,35 @@
 <div class="container">
-  <div class="show-page">
-    <div class="mt-4 justify-content-center"><img src=<%= @venue.image_url %> ></div>
+
+  <div class="show my-4">
+    <div> <img src=<%= @venue.image_url %> > </div>
 
 
+    <h2 class="mt-4"> <%= @venue.name %> </h2>
+    <div class="location-with-icon">
+      <i class="fa-solid fa-location-dot fa-lg" style="color: #fe019a;"></i>
+      <div class ="txt"><p> <%= @venue.address %> </p> </div>
+    </div>
+    <p> <%= @venue.description %> </p>
 
-    <h2><%= @venue.name %></h2>
-    <p><%= @venue.description %></p>
 
-
-    <% if user_signed_in? %>
-
-    <p>
-      <%= link_to "Delete",
-        venue_path(@venue),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </p>
-
+<% if user_signed_in? %>
+    <% if @venue.user_id == current_user.id %>
+      <div class="yellow-btn my-4">
+        <!-- <a href="<%= edit_venue_path(@venue) %>"> Edit </a> -->
+        <%= link_to "Edit", edit_venue_path(@venue) %>
+        <%= link_to "Delete",
+          venue_path(@venue),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </div>
     <% end %>
+  <% end %>
+
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
   </div>
 
