@@ -1,12 +1,14 @@
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 13px;
+    column-gap: 20px;
 }
+
 
 .flex-card {
     display: flex;
     flex-direction: column;
+
     // border-radius: 10px;
     border: 1px, solid, #c8c8c822;
     box-shadow: 3px 3px #88888810;

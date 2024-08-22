@@ -2,11 +2,11 @@
 
   <div class="show my-4">
 
-    <div> <%= cl_image_tag @venue.photo.key %> </div>
-
-
-
-    <div> <img src=<%= @venue.image_url %> > </div>
+    <% if @venue.photo.attached? %>
+      <div> <%= cl_image_tag @venue.photo.key %> </div>
+    <% else %>
+      <div> <img src=<%= @venue.image_url %> > </div>
+    <% end %>
 
 
     <div class="venue-bookings-container row mb-4">
