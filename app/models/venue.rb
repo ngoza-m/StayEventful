@@ -1,5 +1,6 @@
 class Venue < ApplicationRecord
   belongs_to :user
+  has_many :bookings
 
 
   # validates :name, :address, :city, :country, :price, presence: true

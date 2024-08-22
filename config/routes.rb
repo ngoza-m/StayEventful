@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   # Define routes for venues
   get "profile", to: "pages#profile"
-  resources :venues
+  resources :venues do
+    resources :bookings, only: [:new, :create, :edit]
+  end
+
+  resources :bookings, only: [ :edit, :destroy, :update ]
 
 
   # Defines the root path route ("/")
