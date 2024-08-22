@@ -8,10 +8,10 @@
     display: flex;
     flex-direction: column;
     // border-radius: 10px;
-    border: 1px, solid, #c8c8c841;
-    box-shadow: 2px 2px #88888810;
+    border: 1px, solid, #c8c8c822;
+    box-shadow: 3px 3px #88888810;
     color: $raisin-black;
-    background-color: white;
+    background-color: $linen;
 
     img {
         object-fit: cover;
@@ -31,10 +31,14 @@
     }
 
     a {
-        color: $pink;
+        color: $raisin-black;
         // font-size: 12px;
         text-decoration: none;
         // background-color: ;
         // padding: 10px;
+    }
+
+    a:hover {
+        color: $pink;
     }
 }
