@@ -18,16 +18,11 @@ justify-content: space-between;
 
 }
 
-
-ul {
- margin: 50;
-}
-
 .icons ul {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 25px;
+  gap: 15px;
 }
 
 .icons ul li {
@@ -44,8 +39,4 @@ ul {
 .about{
   justify-content: center;
   word-spacing: 10px;
-}
-
-.fa-brands {
-  margin-right: 25px;
 }
