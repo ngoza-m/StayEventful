@@ -17,6 +17,7 @@ class VenuesController < ApplicationController
     @marker = [{ lat: @venue.latitude, lng: @venue.longitude }]
     
     @booking = Booking.new
+    @bookings = Booking.where(venue_id: @venue.id)
 
  
   end

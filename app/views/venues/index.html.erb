@@ -1,5 +1,18 @@
 <div class="container">
 
+  <div class="search-bar row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: venues_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "type a city"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-warning" %>
+      <% end %>
+    </div>
+  </div>
+
     <div class="card-container my-3">
         <% @venues.each do |venue| %>
             <div class="flex-card mb-3">
@@ -14,7 +27,7 @@
                 <div class="p-3">
                     <a href=<%= venue_path(venue) %>> <h2> <%= venue.name %> </h2></a>
                     <p class="mb-0"> <%= venue.address %> </p>
-                    <p> <strong> € <%= venue.price %> </strong> </p>
+                    <p> <strong> € <%= venue.price.to_i %> </strong> </p>
                 </div>
             </div>
         <% end %>
