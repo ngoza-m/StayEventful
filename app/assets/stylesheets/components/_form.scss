@@ -7,6 +7,10 @@
 
 // Styling for input fields
 .rounded-input {
+
+  border-radius: 100px;
+  text-decoration: dotted;
+
   border-radius: 8px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -51,4 +55,5 @@
   border: 1px solid #ccc;     // Border around the form container
   border-radius: 8px;         // Rounded corners
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+
 }
