@@ -20,5 +20,23 @@
 
 .nav-link {
   color: white;
+   font-weight: 500;
+}
+
+
+
+.nav-link:hover {
+  color: $bg;
+}
+
+.show {
+    
+    .avatar {
+    vertical-align: middle;
+    height: 40px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
 }
 
