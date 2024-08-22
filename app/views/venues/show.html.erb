@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="show my-4">
-    <div> <img src=<%= @venue.image_url %> > </div>
+    <div> <%= cl_image_tag @venue.photo.key %> </div>
 
 
     <h2 class="mt-4"> <%= @venue.name %> </h2>

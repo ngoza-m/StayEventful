@@ -13,6 +13,18 @@
   width: 100%;
 }
 
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.address_input {
+  background-color: #F4F4F4;
+}
+
 // Styling for the text area
 .rounded-textarea {
   border-radius: 8px;
@@ -51,4 +63,14 @@
   border: 1px solid #ccc;     // Border around the form container
   border-radius: 8px;         // Rounded corners
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+}
+
+// Styling for h1
+.form-heading {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: $raisin-black;
+  font-family: $headers-font;
+  font-weight: bold;
 }
