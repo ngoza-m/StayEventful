@@ -1,5 +1,10 @@
 class VenuesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
+
+  # GET /venues
+  def index
+    @venues = Venue.all
+  end
 
   # GET /venues/new
   def new
@@ -16,7 +21,6 @@ class VenuesController < ApplicationController
     #     lng: venue.longitude
     #   }
     # end
-
   end
 
   # POST /venues
@@ -33,19 +37,16 @@ class VenuesController < ApplicationController
     end
   end
 
+  # DELETE /venues/:id
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
     redirect_to profile_path, status: :see_other
   end
 
-  def index
-    @venues = Venue.all
-  end
-
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :city, :country, :description, :price)
+    params.require(:venue).permit(:name, :address, :description, :price)
   end
 end
