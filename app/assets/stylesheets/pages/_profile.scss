@@ -62,3 +62,18 @@
     padding: 16px;
   }
   
+  .table img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .table a {
+    text-decoration: none;
+    color: $rose;
+  }
+
+  .table a:hover {
+    color: $raisin-black;
+  }

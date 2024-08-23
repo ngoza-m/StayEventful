@@ -35,19 +35,19 @@
     <div class="col-4 px-2">
 
       <% if current_user.id == @venue.user_id %>
-        <h2  class="mt-4" style="font-size: 24px;"> See bookings on this venue: </h2>
+        <!-- <h2  class="mt-4" style="font-size: 24px;"> See bookings on this venue: </h2> -->
 
         <% if @bookings.exists? %>
 
           <% @bookings.each do |b|%>
            <% booking_creater = User.find(b.user_id) %>
-            <div class="notification">
-              <!-- <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" > -->
+            <!-- <div class="notification">
+              <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" >
               <div class="notification-content">
                 <p><small> <strong>Booking Date: </strong><%= b.date %> </small></p>
                 <p><small> <strong>Booked By:  </strong><%= booking_creater.email  %> </small></p>
                 <p><small> <strong>Number of Hours: </strong><%= b.hours  %> </small></p>
-                <p> <small> <strong>Total: </strong>€<%= b.hours * @venue.price.to_i %> </small></p>
+                <p> <small> <strong>Total: </strong>€<%= b.hours * @venue.price.to_i %> </small></p> -->
               </div>
         
               <div class="notification-actions">
@@ -58,7 +58,7 @@
           <% end %>
 
         <% else %>
-          <p style="color: #000000a9;"><em>This venue has no bookings to display.</em></p>
+          <!-- <p style="color: #000000a9;"><em>This venue has no bookings to display.</em></p> -->
         <% end %>
 
 
