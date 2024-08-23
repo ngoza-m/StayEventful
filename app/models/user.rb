@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :venues
   has_many :bookings
+  has_many :received_bookings, through: :venues, source: :bookings
+
 end
