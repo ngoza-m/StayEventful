@@ -17,8 +17,8 @@ class VenuesController < ApplicationController
     @marker = [{ lat: @venue.latitude, lng: @venue.longitude }]
     
     @booking = Booking.new
+    @bookings = Booking.where(venue_id: @venue.id)
 
- 
   end
 
   # POST /venues
@@ -39,12 +39,19 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
   end
 
+  def update
+    @venue = Venue.find(params[:id])
+    @venue.update(venue_params)
+    redirect_to venue_path(@venue)
+  end
+
   # DELETE /venues/:id
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
     redirect_to profile_path, status: :see_other
   end
+
 
   private
 

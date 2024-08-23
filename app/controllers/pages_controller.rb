@@ -11,4 +11,9 @@ class PagesController < ApplicationController
   def home
     @venues = Venue.all.limit(8)
   end
+
+  def search
+    @venues = Venue.search_by_city(params[:query])
+  end
+  
 end
