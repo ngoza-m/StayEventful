@@ -13,10 +13,14 @@
     <div class="col-6 p-4">
         
         <div class="row-container">
-            <h3 style="margin-bottom: 40px;">Manage Your Venues</h3>
+            <h3 style="margin-bottom: 40px;">Manage Venues</h3>
             <% @venues.each do |venue| %>
             <div class="card-product mb-4">
-                <img src=<%= venue.image_url %> >
+                <% if venue.photo.attached? %>
+                      <%= cl_image_tag venue.photo.key %>
+                    <% else %>
+                      <img src="<%= venue.image_url %>">
+                    <% end %>
                 <div class="card-product-infos">
                 <h2><%= venue.name %></h2> 
                 <div class="location-with-icon">
@@ -40,10 +44,15 @@
     <div class="col-6 p-4">
         
         <div class="row-container">
-            <h3 style="margin-bottom: 40px;">Manage Your Bookings</h3>
+            <h3 style="margin-bottom: 40px;">My Bookings</h3>
         <% @bookings.each do |booking| %>
         <div class="card-product mb-4">
-            <img src=<%= booking.venue.image_url %> >
+            <% if booking.venue.photo.attached? %>
+                      <%= cl_image_tag booking.venue.photo.key %>
+                    <% else %>
+                      <img src="<%= booking.venue.image_url %>">
+                    <% end %>
+           
             <div class="card-product-infos">
                 <h2><%= booking.venue.name %></h2>
                 <p> <strong>Date:</strong> <%= booking.date %></p>
