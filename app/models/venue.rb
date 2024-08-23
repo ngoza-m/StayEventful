@@ -20,4 +20,13 @@ class Venue < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true, length: { minimum: 50 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
+
+
+  include PgSearch::Model
+  pg_search_scope :search_by_city,
+  against: [ :address ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
+  
 end

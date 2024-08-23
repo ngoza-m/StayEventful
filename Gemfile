@@ -82,3 +82,4 @@ gem "devise"
 gem 'faker'
 gem "geocoder"
 gem "cloudinary"
+gem "pg_search"
