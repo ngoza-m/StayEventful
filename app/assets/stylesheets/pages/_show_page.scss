@@ -1,16 +1,23 @@
 .show {
-    
+
     h2 {
-        font-family: $body-font;
+        font-family: $headers-font;
         font-weight: bold;
+        color: $raisin-black
     }
-    
-        img {
-            vertical-align: middle;
-            height: 400px;
-            width: 100%;
-            object-fit: cover;
-        }
+
+        // img {
+        //     vertical-align: middle;
+        //     height: 400px;
+        //     width: 100%;
+        //     object-fit: cover;
+        // }
+
+        max-width: 100%; /* Ensures the container takes up full width */
+  border-radius: 16px; /* Rounds the corners of the container */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  margin-bottom: 20px; /* Adds some space below the image */
 
 
         txt {
@@ -41,13 +48,15 @@
 }
 
 .sign-up-to-party a {
-    color: $pink;
-    opacity: 0.6;
-    text-decoration: none;
+  background-color: $rose-cta-buttons; /* Use the rose color for buttons */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase; /* Make text consistent with other buttons */
+  font-weight: bold;
 }
 
 
 .sign-up-to-party a:hover {
-    color: $raisin-black;
-    text-decoration: none;
+  background-color: darken($rose-cta-buttons, 10%); /* Darken on hover */
 }
