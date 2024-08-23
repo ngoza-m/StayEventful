@@ -1,7 +1,17 @@
-.blank-profile img {
+.row-container {
+  display: flex;
+  flex-direction: column;
+  // width: 1000px;
+  padding: 40px;     // Add padding inside the form container
+  // // margin: 40px auto; // Center the container and add top/bottom margin
 
-    width: 200px;
-    border-radius: 50%;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.038);
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.038);
+    background-color: white; // Light background color
+  // border: 1px solid #ccc;     // Border around the form container
+  border-radius: 8px;         // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .profile a {
@@ -16,11 +26,16 @@
 .card-product {
     overflow: hidden;
     height: 150px;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.038);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.038);
-    display: flex;
     align-items: center;
+    margin-bottom: 8px;
+    background: white;
+    // padding: 8px 16px;
+    border: 1px solid rgb(235,235,235);
+    // background: white;
+    // border: 1px solid rgba(0, 0, 0, 0.038);
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.038);
+    display: flex;
+    // align-items: center;
   }
   
   .card-product img {

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   # Define routes for venues
   get "profile", to: "pages#profile"
+  get "search", to: "pages#search"
+  
   resources :venues do
     resources :bookings, only: [:new, :create, :edit]
   end
