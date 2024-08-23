@@ -22,13 +22,13 @@
       <p> <%= @venue.description %> </p>
       
       <% if user_signed_in? %>
-        <% if @venue.user_id == current_user.id %>
-          <div class="yellow-btn my-4">
-            <%= link_to "Edit", edit_venue_path(@venue) %>
-            <%= link_to "Delete", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          </div>
-        <% end %>
-          
+          <% if @venue.user_id == current_user.id %>
+            <div class="yellow-btn my-4">
+              <%= link_to "Edit", edit_venue_path(@venue) %>
+              <%= link_to "Delete", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
+          <% end %>
+      
     </div>
    
 
@@ -47,7 +47,7 @@
                 <p><small> <strong>Booking Date: </strong><%= b.date %> </small></p>
                 <p><small> <strong>Booked By:  </strong><%= booking_creater.email  %> </small></p>
                 <p><small> <strong>Number of Hours: </strong><%= b.hours  %> </small></p>
-                <p> <small> <strong>Bill: </strong>€<%= b.hours * @venue.price.to_i %> </small></p>
+                <p> <small> <strong>Total: </strong>€<%= b.hours * @venue.price.to_i %> </small></p>
               </div>
         
               <div class="notification-actions">
@@ -82,26 +82,22 @@
         </div>
 
       <% end %>
+
+      <% else %>
+      <div class="sign-up-to-party">
+        <p style="padding-top: 50px; color: rgba(0, 0, 0, 0.507);"><em> Want to host a party here? <a href=<%= new_user_registration_path %>><strong>Create an account</strong></a> to book this venue.</em></p>
+      </div>
+        <% end %>
     </div>
+  </div>
+  
 
-    <% else %>
-
-    
-    <a class="btn btn-primary mb-4" href="#" role="button">Sign Up to Make a Booking</a>
-    
-
-    <% end %>
-
-  <div class="map-box-container mt-4">
-    <!-- <h3 class="my-2"><strong> Where You'll Party</strong></h3> -->
+  <div class="map-box-container mb-4">
     <div style="width: 80%; height: 400px; border-radius: 15px;"
       data-controller="map"
       data-map-markers-value="<%= @marker.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
-  </div>
-  
 
 </div>
