@@ -1,42 +1,46 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: $raisin-black;
+.navbar {
+    justify-content: space-between;
+    background: $raisin-black;
+    padding: 20px 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar .navbar-collapse {
+    flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar .navbar-brand img {
+    width: 40px;
 }
 
 .navbar-brand h3 {
-  font-family: $logo-font;
-  font-weight: 800;
-  color: white;
-  margin: 0px 0px 8px 10px;
+    font-family: $logo-font;
+    font-weight: 400;
+    color: white;
+    margin: 0px 0px 8px 10px;
+    font-size: 30px;
 }
 
 .nav-link {
-  color: white;
-   font-weight: 500;
+    font-family: $headers-font;
+    padding: 12px 20px;
+    color: white;
+    font-weight: 600;
 }
 
-
+.navbar-nav .nav-item:not(:last-child) {
+  margin-right: 20px;
+}
 
 .nav-link:hover {
   color: $bg;
 }
 
 .show {
-
     .avatar {
-    vertical-align: middle;
-    height: 40px;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-  }
+        vertical-align: middle;
+        height: 40px;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
 }
-

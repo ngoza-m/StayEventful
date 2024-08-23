@@ -5,10 +5,11 @@
 @import "show_page";
 @import "profile";
 
-body {
-   background-color: white;
 
-   p {
+body {
+  background-color: white;
+
+  p {
     font-family: $body-font;
-   }
+  }
 }

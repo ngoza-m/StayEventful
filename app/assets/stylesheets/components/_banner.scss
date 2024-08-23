@@ -9,10 +9,13 @@
 }
 
 .banner h2 {
-        font-family: $body-font;
-        font-weight: 800;
-        font-size: 50px;
-        color: white;
+    font-family: $body-font;
+    font-weight: 600;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .banner a {
@@ -21,19 +24,22 @@
 }
 
 .banner p {
-    background-color: $pink;
-    padding: 15px 40px;
+    font-family: $headers-font;
+    background-color: $rose;
+    padding: 12px 24px;
     font-weight: bold;
     font-size: 20px;
-    border-radius: 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .banner p:hover {
-    background-color: $bg;
+    background-color: $darker-rose;
+    transform: scale(1.05);
 }
 
 .after-banner {
-    background-color: $bg;
+    background-color: $blue-sky;
     padding: 60px;
 }
 
