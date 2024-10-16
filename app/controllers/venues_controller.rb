@@ -26,7 +26,9 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
     @venue.user = current_user
     # if save is successful, user is redirected venue’s show page with a success message.
-    if @venue.save
+    if @venue.latitude.nil? || @venue.longitude.nil?
+      render :new, status: :unprocessable_entity
+    elsif @venue.save
       redirect_to @venue, notice: 'Venue was successfully created!'
     # if save fails (due to validation errors), form is re-rendered, and user remains on new page,
     # with an appropriate status code (422 Unprocessable Entity).
