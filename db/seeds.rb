@@ -13,7 +13,7 @@ require 'faker'
 
 puts "clearing junk"
 
-10.times do
+2.times do
     v = Venue.create(
         user_id: 1,
         name: "La Tour Eiffle",
@@ -23,5 +23,4 @@ puts "clearing junk"
         country: "France",
         price: 1000, 
         image_url: "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-    puts v
 end
